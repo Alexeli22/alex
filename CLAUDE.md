@@ -6,18 +6,22 @@ This file provides context and conventions for AI assistants working in this rep
 
 - **Name:** alex
 - **Owner:** Alexeli22
-- **Status:** Newly initialized — this is a fresh repository with no application code yet.
+- **Status:** Mobile compass web application (PWA)
 - **Remote:** `Alexeli22/alex` on GitHub
 
 ## Project Structure
 
 ```
 alex/
+├── index.html         # Main HTML page
+├── style.css          # Styles (mobile-first, dark theme)
+├── compass.js         # Compass logic using Device Orientation API
+├── manifest.json      # PWA manifest
+├── sw.js              # Service worker for offline support
+├── compass-icon.svg   # App icon
 ├── CLAUDE.md          # This file — AI assistant guide
 └── .git/              # Git metadata
 ```
-
-> **Note:** Update this section as the project grows with source directories, config files, and documentation.
 
 ## Development Workflow
 
@@ -40,7 +44,26 @@ alex/
 
 ## Build & Run
 
-> **TODO:** Document build commands, prerequisites, and run instructions once the project has application code.
+This is a static web application — no build step required.
+
+### Running Locally
+
+Use any static file server:
+
+```bash
+# Python
+python -m http.server 8000
+
+# Node.js (npx)
+npx serve
+
+# PHP
+php -S localhost:8000
+```
+
+Then open `http://localhost:8000` on your mobile device (must be on same network).
+
+**Important:** Device orientation requires HTTPS in production. For local testing, `localhost` is allowed.
 
 ## Testing
 
@@ -52,11 +75,27 @@ alex/
 
 ## Dependencies
 
-> **TODO:** Document package manager, key dependencies, and installation steps once a dependency manifest is added.
+No external dependencies — vanilla HTML, CSS, and JavaScript only.
 
 ## Architecture
 
-> **TODO:** Document high-level architecture, key modules, and design decisions as the project takes shape.
+### Overview
+
+Mobile-first Progressive Web App (PWA) that uses the Device Orientation API to function as a real compass.
+
+### Key Components
+
+- **Compass class** (`compass.js`) — Handles device orientation events, calculates heading, animates compass rotation
+- **Device Orientation API** — Uses `deviceorientation` and `deviceorientationabsolute` events
+- **iOS Compatibility** — Handles `DeviceOrientationEvent.requestPermission()` for iOS 13+
+- **PWA** — Service worker for offline caching, manifest for installability
+
+### Browser Support
+
+- iOS Safari 13+ (requires user permission)
+- Chrome for Android
+- Samsung Internet
+- Other mobile browsers with magnetometer support
 
 ## Conventions for AI Assistants
 

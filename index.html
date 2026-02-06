@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>מצפן</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="compass-icon.svg">
+    <link rel="apple-touch-icon" href="compass-icon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="compass-wrapper">
+            <div class="compass">
+                <div class="compass-circle">
+                    <div class="compass-rose"></div>
+                    <div class="direction-marker north">צ</div>
+                    <div class="direction-marker east">מ</div>
+                    <div class="direction-marker south">ד</div>
+                    <div class="direction-marker west">מע</div>
+                </div>
+                <div class="compass-needle">
+                    <div class="needle-north"></div>
+                    <div class="needle-south"></div>
+                    <div class="needle-center"></div>
+                </div>
+            </div>
+            <div class="fixed-indicator"></div>
+        </div>
+
+        <div class="heading-display">
+            <span class="heading-value">---</span>
+            <span class="heading-unit">°</span>
+        </div>
+
+        <div class="direction-name">---</div>
+
+        <div class="status-message" id="status"></div>
+
+        <button class="calibrate-btn" id="calibrateBtn" style="display: none;">
+            כיול מצפן
+        </button>
+
+        <button class="start-btn" id="startBtn">
+            הפעל מצפן
+        </button>
+    </div>
+
+    <script src="compass.js"></script>
+</body>
+</html>

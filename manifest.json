@@ -1,0 +1,18 @@
+{
+    "name": "מצפן",
+    "short_name": "מצפן",
+    "description": "מצפן דיגיטלי שמצביע תמיד לצפון",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#1a1a2e",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "compass-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
